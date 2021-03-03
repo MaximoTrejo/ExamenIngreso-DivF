@@ -61,6 +61,9 @@ function mostrar()
 
   do {
     nombre = promp("ingresa nombre");
+    while(isNaN(nombre) == false){ 
+			nombre=prompt("Error.ingrese un nombre");
+		}
 
     situacionLaboral = prompt("Ingrese el tipo de situcación laboral(buscando , trabajando o solo estudiante)");
     while (situacionLaboral != 'buscando' && situacionLaboral != 'trabajando' && situacionLaboral != 'solo estudiantes') {

@@ -52,6 +52,9 @@ function mostrar()
 	do {
 		ingreso++;
 		nombre=prompt("ingrese nombre");
+		while(isNaN(nombre) == false){ 
+			nombre=prompt("Error.ingrese un nombre");
+		  }
 
 		obraSocial=prompt("ingrese Obra Social (PAMI, OSDE o otras)");
     	while (obraSocial != 'PAMI' && obraSocial != 'OSDE' && obraSocial != 'otras') {
