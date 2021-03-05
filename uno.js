@@ -50,9 +50,9 @@ function mostrar()
  let contDM;
 
  //d
- let acumMCA;
- let acumMCI;
- let acumMCQ;
+ let acumMCA=0;
+ let acumMCI=0;
+ let acumMCQ=0;
  let guardarFabricante;
  let guardarCategoria;
 

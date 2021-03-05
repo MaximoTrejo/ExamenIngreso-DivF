@@ -46,7 +46,7 @@ function mostrar()
 	let ingreso;
 	let total;
 	//d
-	let contPAMI;
+	let contPAMI=0;
 	let precioFinal;
 
 	do {
