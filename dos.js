@@ -90,15 +90,17 @@ function mostrar()
     }
 
     //a
-    if(flagMP|| (situacionLaboral=='solo estudiantes' && mejorPromedio < notaPromedio)){
+    if((flagMP ||  mejorPromedio < notaPromedio) && situacionLaboral=='solo estudiantes'){ // 
       notaPromedio  = mejorPromedio;
       nombreMP=nombre;
+      flagMP=0;
 
     }
     //b
-    if(flagViejo|| (situacionLaboral=='solo estudiantes' && masViejo< edad)){
+    if((flagViejo|| masViejo< edad) && situacionLaboral=='solo estudiantes'){
       edad=masViejo;
       nombreMasViejo=nombre;
+      flagViejo=0;
 
     }
     //c
@@ -118,10 +120,11 @@ function mostrar()
     }
 
     //d
-    if(flagCM || situacionLaboral=='buscando' && menosCantidad > cantidadMaterias){
+    if((flagCM || menosCantidad > cantidadMaterias) && situacionLaboral=='buscando'){
       cantidadMaterias=menosCantidad;
       edadMCM=edad;
       nombreMCM=nombre;
+      flagCP=0;
       
     }
 

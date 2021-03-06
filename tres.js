@@ -46,7 +46,7 @@ function mostrar()
 	let ingreso;
 	let total;
 	//d
-	let contPAMI=0;
+	let contPAMI=0; // contadores y acumuladores inicializarlas en 0
 	let precioFinal;
 
 	do {
@@ -80,16 +80,18 @@ function mostrar()
 
 
 			case"OSDE":
-			if(flag|| ( edad > 60)){
+			if(flag|| edad > 60){
 				contPOM++;
+				flag=0;
 			}
 			break;
 			case"PAMI":
-			contPAMI++;
-			if (flagMJP|| (sexo == 'f' && mujerMJP < edad)){
+			contPAMI++;// contador de personas que eligieron PAMI
+			if ((flagMJP|| mujerMJP < edad) && sexo == 'f'){ // estructura if con flag
 				edad=mujerMJP;
 				nombreMJP=nombre;
 				temperaturaMJP=temperaturaCorporal;
+				flagMJP=0;
 			}
 			break;
 		}
@@ -99,24 +101,26 @@ function mostrar()
 
 		//d
 
-		if ((contPAMI == (ingreso/2)) ){
-			precioFinal=(25*total/100);
-		}
-
 		seguir= prompt("¿desea ingresar otro producto?").toLowerCase();
 	  } while (seguir== 's' || seguir== 'si');
 
+
+
+	  //a
 	  console.log("a) La cantidad de personas con OSDE de mas de 60 años. " + contPOM );
+	  //b
 	  console.log("b) el nombre y temperatura de la mujer con PAMI mas joven, nombre " +nombreMJP + " temperatura " + temperaturaMJP);
+	  //c
 	  console.log("c) cuanto sale el viaje total sin descuento. " + total);
 
+	  //d
 
-	  if (contPAMI != (ingreso/2)){
-		  console.log("no hay descuento");
-	  }else{
+
+	  if (contPAMI >= (ingreso/2)){
+		  precioFinal= total-(0.25*total);
 		console.log("d) si hay mas del 50% de los pasajeros que pertenecen a PAMI, el precio final tiene un descuento del 25% es " + precioFinal);
-
-
+	  }else{
+		console.log("no hay descuento");
 		}
 	  
 
