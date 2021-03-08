@@ -86,9 +86,9 @@ function mostrar()
 			}
 			break;
 			case"PAMI":
-			contPAMI++;// contador de personas que eligieron PAMI
+			contPAMI++;// contador de personas que eligieron PAMI(para sacar el promedio con descuento)
 			if ((flagMJP|| mujerMJP < edad) && sexo == 'f'){ // estructura if con flag
-				edad=mujerMJP;
+				mujerMJP=edad;//primero va la variable que cree para guardar el dato y despues la que pedi con promp
 				nombreMJP=nombre;
 				temperaturaMJP=temperaturaCorporal;
 				flagMJP=0;
@@ -107,7 +107,12 @@ function mostrar()
 
 
 	  //a
-	  console.log("a) La cantidad de personas con OSDE de mas de 60 años. " + contPOM );
+	  if(contPOM!=0){
+		console.log("a) La cantidad de personas con OSDE de mas de 60 años. " + contPOM );
+
+	  }else{
+		console.log("No hay personas con OSDE de mas de 60 años")
+	  }
 	  //b
 	  console.log("b) el nombre y temperatura de la mujer con PAMI mas joven, nombre " +nombreMJP + " temperatura " + temperaturaMJP);
 	  //c

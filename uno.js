@@ -169,8 +169,14 @@ else {
 //b
 	console.log("b) La categoria con mas cantidad de unidades en total de la compra " + categoriaMCU);
 //c
+
+if(contDM!=0){
 	console.log("c) Cuántas unidades de detergente con precios menos a 200 (inclusive) se compraron en total " + contDM );
+}else{
+	console.log("c) no hay unidades de detergente con precios menos a 200");
 //d
+}
+	
 	console.log("d) el fabricante y Categoria del más caro de los productos ,fabricante " + guardarFabricante + " categoria " + guardarCategoria);
 
 

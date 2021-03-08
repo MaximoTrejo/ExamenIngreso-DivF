@@ -91,14 +91,14 @@ function mostrar()
 
     //a
     if((flagMP ||  mejorPromedio < notaPromedio) && situacionLaboral=='solo estudiantes'){ // 
-      notaPromedio  = mejorPromedio;
+      mejorPromedio=notaPromedio ;
       nombreMP=nombre;
       flagMP=0;
 
     }
     //b
     if((flagViejo|| masViejo< edad) && situacionLaboral=='solo estudiantes'){
-      edad=masViejo;
+      masViejo= edad;
       nombreMasViejo=nombre;
       flagViejo=0;
 
@@ -121,7 +121,7 @@ function mostrar()
 
     //d
     if((flagCM || menosCantidad > cantidadMaterias) && situacionLaboral=='buscando'){
-      cantidadMaterias=menosCantidad;
+      menosCantidad=cantidadMaterias;//primero va la variable que cree para guardar el dato y despues la que pedi con promp
       edadMCM=edad;
       nombreMCM=nombre;
       flagCP=0;
